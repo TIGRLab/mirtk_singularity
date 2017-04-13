@@ -1,0 +1,11 @@
+Bootstrap: docker
+From: biomedia/mirtk:latest
+
+%post
+  mkdir /input
+  mkdir /output
+  exit 0
+
+%runscript
+  export LD_LIBRARY_PATH=/usr/local/lib
+  /usr/local/bin/mirtk $@
